@@ -1,0 +1,10 @@
+**/node_modules/
+**/dist/
+**/.vscode/
+**/.idea/
+**/npm-debug.log
+.eslintcache
+.DS_Store
+debug.log
+yarn-error.log
+server/tmp
