@@ -477,7 +477,15 @@ module.exports = function (webpackEnv) {
 							use: getStyleLoaders({
 								importLoaders: 1,
 								sourceMap: isEnvProduction && shouldUseSourceMap,
-							}, 'less-loader'),
+							}, 'less-loader').concat({
+								loader:'sass-resources-loader',
+								options:{
+									resources:[
+										path.resolve(__dirname,'../src/assets/less/variable.less'),
+										path.resolve(__dirname,'../src/assets/less/mixin.less')
+									]
+								},
+							}),
 							// Don't consider CSS imports dead code even if the
 							// containing package claims to have no side effects.
 							// Remove this when webpack adds a warning or an error for this.

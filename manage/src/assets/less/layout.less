@@ -1,0 +1,99 @@
+/* 布局相关——盒模型相关内容和排版相关
+盒模型相关内容包含：字体大小、padding、margin
+布局：flex布局、display+position+float（浮动、清除浮动等）。——解决问题：居中、两端对齐、栅格化布局
+date:2019-11-21 */
+
+@import "./mixin";
+body{
+	font-size:12rem;
+}
+
+/* todo display */
+.d-block{display:block;}
+.d-inline{display:inline;}
+.d-inline-block{display:inline-block;}
+.d-table{display:table;}
+.d-table-cell{display:table-cell;}
+
+/* float */
+.float-left{float:left;}
+.float-right{float:right;}
+.clear-float:after{content:'';display:block;height:0;visibility:hidden;clear:both;}
+
+/* todo text-align */
+.text-center{text-align:center;}
+.text-left{text-align:left;}
+.text-right{text-align:right;}
+
+/*todo vertical-align:number/percentage */
+.vertical-top{vertical-align:top;}
+.vertical-sub{vertical-align:sub;}
+.vertical-text-top{vertical-align:text-top;}
+.vertical-middle{vertical-align:middle;}
+.vertical-baseline{vertical-align:baseline;}
+.vertical-bottom{vertical-align:bottom;}
+
+/* todo 垂直居中 */
+.transform-v-center{position:absolute;top:50%;transform:translateY(-50%);}
+.transform-h-center{position:absolute;left:50%;transform:translateX(-50%);}
+.transform-v-h-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+
+/* todo flex布局——设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。 */
+.display-flex{display:flex;display:-webkit-flex;}
+// 主轴为column，水平居中
+.flex-column-h-center{.display-flex();.flex-direction(column);.justify-content();}
+// 水平两端对齐
+.flex-justify-between{.display-flex();.flex-direction();justify-content(space-between);}
+// 水平居中对齐
+.flex-h-center{.display-flex();.justify-content();}
+// 水平垂直居中
+.flex-v-h-center{.display-flex();.justify-content();.align-items();}
+// 垂直居中
+.flex-v-center{.display-flex();.align-items();}
+// flex:0 0 auto;
+.flex-item-none{flex:none;}
+// flex:1 1 auto;
+.flex-item-auto{flex:auto;}
+
+/* todo margin与padding */
+.margin-top-10{margin-top:10rem;}
+.margin-top-15{margin-top:15rem;}
+.margin-top-20{margin-top:20rem;}
+.margin-top-25{margin-top:25rem;}
+.margin-top-30{margin-top:30rem;}
+.margin-bottom-10{margin-bottom:10rem;}
+.margin-bottom-15{margin-bottom:15rem;}
+.margin-bottom-20{margin-bottom:20rem;}
+.margin-bottom-25{margin-bottom:25rem;}
+.margin-bottom-30{margin-bottom:30rem;}
+.margin-left-10{margin-left:10rem;}
+.margin-left-15{margin-left:15rem;}
+.margin-left-20{margin-left:20rem;}
+.margin-left-25{margin-left:25rem;}
+.margin-left-30{margin-left:30rem;}
+.margin-right-10{margin-right:10rem;}
+.margin-right-15{margin-right:15rem;}
+.margin-right-20{margin-right:20rem;}
+.margin-right-25{margin-right:25rem;}
+.margin-right-30{margin-right:30rem;}
+.margin-top-10{margin-top:10rem;}
+.margin-top-15{margin-top:15rem;}
+.margin-top-20{margin-top:20rem;}
+.margin-top-25{margin-top:25rem;}
+.margin-top-30{margin-top:30rem;}
+
+.padding-bottom-10{padding-bottom:10rem;}
+.padding-bottom-15{padding-bottom:15rem;}
+.padding-bottom-20{padding-bottom:20rem;}
+.padding-bottom-25{padding-bottom:25rem;}
+.padding-bottom-30{padding-bottom:30rem;}
+.padding-left-10{padding-left:10rem;}
+.padding-left-15{padding-left:15rem;}
+.padding-left-20{padding-left:20rem;}
+.padding-left-25{padding-left:25rem;}
+.padding-left-30{padding-left:30rem;}
+.padding-right-10{padding-right:10rem;}
+.padding-right-15{padding-right:15rem;}
+.padding-right-20{padding-right:20rem;}
+.padding-right-25{padding-right:25rem;}
+.padding-right-30{padding-right:30rem;}

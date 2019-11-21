@@ -1,0 +1,35 @@
+/* 提供减少代码的less函数
+ date:2019-11-21
+ */
+
+/* TODO basic */
+.border(@color){border:1px solid @color;}
+.marginTop(@value:0){margin-top:@value;}
+.marginBottom(@value:0){margin-bottom:@value;}
+.marginLeft(@value:0){margin-left:@value;}
+.marginRight(@value:0){margin-right:@value;}
+
+/* TODO flex相关 */
+/* todo 容器属性 */
+/*主轴方向——flex-direction:row | row-reverse | column | column-reverse;*/
+.flex-direction(@value:row){flex-direction:@value;}
+/*flex-wrap:nowrap | wrap | wrap-reverse;*/
+.flex-wrap(@value:nowrap){flex-wrap:@value;}
+.flex-flow(@direction:row,@wrap:nowrap){flex-flow:@direction @wrap;}
+/*justify-content: flex-start | flex-end | center | space-between | space-around;*/
+.justify-content(@value:center){justify-content:@value;}
+/*align-items: flex-start | flex-end | center | baseline | stretch;*/
+.align-items(@value:center){align-items:@value;}
+/*多轴align-content: flex-start | flex-end | center | space-between | space-around | stretch;*/
+.align-content(@value:space-between){align-content:@value;}
+/* todo 项目属性——用于flex子元素上 */
+.order(@value:0){order:@value;}
+.flex-grow(@value:0){flex-grow:@value;}
+.flex-shrink(@value:0){flex-shrink:@value;}
+/* flex-basis——元素占有的基础宽度，auto为元素本身大小 */
+.flex-basis(@value:auto){flex-basis:@value;}
+/*align-self: auto | flex-start | flex-end | center | baseline | stretch;，auto为继承父级align-items属性值*/
+.align-self(@value:auto){align-self:@value;}
+/*flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]——快捷键：auto (1 1 auto) 和 none (0 0 auto)*/
+.flex(@grow:0,@shrink:0,@basis:auto){flex:@grow @shrink @basis;}
+
