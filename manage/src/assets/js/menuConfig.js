@@ -5,7 +5,7 @@
 export default [
 	{
 		title:"首页",
-		path:"",
+		path:"/MainPage",
 		key:"1",
 		iconType:"appstore"
 	},
@@ -17,7 +17,7 @@ export default [
 		children:[
 			{
 				title:"门店管理",
-				path:"",
+				path:"/StoreManage",
 				key:"3"
 			}
 		]

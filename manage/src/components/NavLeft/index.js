@@ -1,45 +1,50 @@
 import React from 'react';
-import { Menu, Icon, Button } from 'antd';
-import menuConfig from 'assets/js/menuConfig'
+import {Menu, Icon, Button} from 'antd';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import menuConfig from 'assets/js/menuConfig';
+import MainPage from 'pages/MainPage'
+import StoreManage from 'pages/systemSetting/StoreManage'
 
-const { SubMenu } = Menu;
+const {SubMenu} = Menu;
 
-export default class NavLeft extends React.Component{
+export default class NavLeft extends React.Component {
 
-	state={
-		collapse:false,
-		menuItemDOM:null
+	state = {
+		collapse: false,
+		menuItemDOM: null
 	};
-	collapseClick=()=>{
+	collapseClick = () => {
 		this.setState({
-			collapse:!this.state.collapse
+			collapse: !this.state.collapse
 		});
 	};
 
-	renderMenu=(menuArr)=>{
-		return menuArr.map((item)=>{
-			if(item.children&&item.children.length){
+	renderMenu = (menuArr) => {
+		return menuArr.map((item) => {
+			if (item.children && item.children.length) {
 				return (
 					<SubMenu key={item.key} title={
 						<span>
-						{(item.iconType)&&(<Icon type={item.iconType} />)}
+						{(item.iconType) && (<Icon type={item.iconType}/>)}
 							<span>{item.title}</span>
 					</span>
 					}>{this.renderMenu(item.children)}</SubMenu>
 				)
-			}else{
+			} else {
 				return (
 					<Menu.Item key={item.key}>
-						{(item.iconType)&&(<Icon type={item.iconType} />)}
-						<span>{item.title}</span>
+						<Link to={item.path}>
+							{(item.iconType) && (<Icon type={item.iconType}/>)}
+							<span>{item.title}</span>
+						</Link>
 					</Menu.Item>
 				)
 			}
 		})
 	};
 
-	componentWillMount(){
-		let menuItemDOM=this.renderMenu(menuConfig);
+	componentWillMount() {
+		let menuItemDOM = this.renderMenu(menuConfig);
 		this.setState({
 			menuItemDOM
 		})
@@ -47,13 +52,20 @@ export default class NavLeft extends React.Component{
 
 	render() {
 		return (
-			<div style={{width:200}}>
-				<Button onClick={this.collapseClick} type="primary">
-					<Icon type="mail" />
-				</Button>
-				<Menu defaultOpenKeys={["2"]} defaultSelectedKeys={["1"]} mode="inline" theme="light" inlineCollapsed={this.state.collapse}>
-					{this.state.menuItemDOM}
-				</Menu>
+			<div style={{width: 200}}>
+				<Router>
+					<Button onClick={this.collapseClick} type="primary">
+						<Icon type="mail"/>
+					</Button>
+					<Menu defaultOpenKeys={["2"]} defaultSelectedKeys={["1"]} mode="inline" theme="light"
+					      inlineCollapsed={this.state.collapse}>
+						{this.state.menuItemDOM}
+					</Menu>
+					<Switch>
+						<Route path="/MainPage" component={MainPage}/>
+						<Route path="/StoreManage" component={StoreManage}/>
+					</Switch>
+				</Router>
 			</div>
 		);
 	}
