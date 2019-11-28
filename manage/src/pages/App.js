@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from 'components/Header'
-import NavLeft from 'components/NavLeft'
+import NavLeft from 'components/NavLeft/MenuRouter'
 import './App.css';
 
 function App() {

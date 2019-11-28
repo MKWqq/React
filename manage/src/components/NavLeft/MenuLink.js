@@ -1,15 +1,14 @@
 import React from 'react';
 import {Menu, Icon, Button} from 'antd';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import menuConfig from 'assets/js/menuConfig';
-import MainPage from 'pages/MainPage'
-import StoreManage from 'pages/systemSetting/StoreManage'
 
 const {SubMenu} = Menu;
 
 export default class NavLeft extends React.Component {
 
 	state = {
+		selectedKey:"1",
 		collapse: false,
 		menuItemDOM: null
 	};
@@ -53,19 +52,14 @@ export default class NavLeft extends React.Component {
 	render() {
 		return (
 			<div style={{width: 200}}>
-				<Router>
-					<Button onClick={this.collapseClick} type="primary">
-						<Icon type="mail"/>
-					</Button>
-					<Menu defaultOpenKeys={["2"]} defaultSelectedKeys={["1"]} mode="inline" theme="light"
-					      inlineCollapsed={this.state.collapse}>
-						{this.state.menuItemDOM}
-					</Menu>
-					<Switch>
-						<Route path="/MainPage" component={MainPage}/>
-						<Route path="/StoreManage" component={StoreManage}/>
-					</Switch>
-				</Router>
+				<Button onClick={this.collapseClick} type="primary">
+					<Icon type="mail"/>
+				</Button>
+				<Menu defaultOpenKeys={["2"]} defaultSelectedKeys={[this.state.selectedKey]} mode="inline" theme="light"
+				      inlineCollapsed={this.state.collapse}>
+					{this.state.menuItemDOM}
+				</Menu>
+				{this.props.children}
 			</div>
 		);
 	}

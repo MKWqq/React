@@ -19,6 +19,11 @@ export default [
 				title:"门店管理",
 				path:"/StoreManage",
 				key:"3"
+			},
+			{
+				title:"基础路由",
+				path:"setting",
+				key:"4"
 			}
 		]
 	}
