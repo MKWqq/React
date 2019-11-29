@@ -10,7 +10,7 @@ export default class BaseSetting extends React.Component{
 		return (
 			<div>
 				<span>this is base system setting</span>
-				<Link to="/setting/store">门店管理</Link>
+				<Link to="/setting/ChildStore">门店管理</Link>
 				{this.props.children}
 			</div>
 		)

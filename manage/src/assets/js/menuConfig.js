@@ -22,7 +22,7 @@ export default [
 			},
 			{
 				title:"基础路由",
-				path:"setting",
+				path:"/setting",
 				key:"4"
 			}
 		]

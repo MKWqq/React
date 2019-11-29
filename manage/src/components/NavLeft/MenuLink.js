@@ -42,7 +42,7 @@ export default class NavLeft extends React.Component {
 		})
 	};
 
-	componentWillMount() {
+	componentDidMount() {
 		let menuItemDOM = this.renderMenu(menuConfig);
 		this.setState({
 			menuItemDOM
