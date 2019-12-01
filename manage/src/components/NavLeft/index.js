@@ -10,7 +10,7 @@ const {SubMenu} = Menu;
 class NavLeft extends React.Component {
 
 	state = {
-        currentMenuKey:"",
+        currentMenuKey:window.location.pathname.replace(/\?.*$/,''),
 		collapse: false,
 		menuItemDOM: null
 	};

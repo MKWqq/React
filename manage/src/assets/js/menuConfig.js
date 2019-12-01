@@ -7,7 +7,7 @@ export default [
 	{
 		title:"首页",
 		path:`${_baseUrl}/MainPage`,
-		key:"1",
+		key:`${_baseUrl}/MainPage`,
 		iconType:"appstore"
 	},
 	{
@@ -19,12 +19,12 @@ export default [
 			{
 				title:"门店管理",
 				path:`${_baseUrl}/StoreManage`,
-				key:"3"
+				key:`${_baseUrl}/StoreManage`
 			},
 			{
 				title:"基础路由",
 				path:`${_baseUrl}/setting`,
-				key:"4"
+				key:`${_baseUrl}/setting`
 			}
 		]
 	}
