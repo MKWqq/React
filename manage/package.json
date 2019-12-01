@@ -139,5 +139,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "react-redux": "^7.1.3"
   }
 }

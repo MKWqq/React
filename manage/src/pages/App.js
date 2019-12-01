@@ -1,13 +1,14 @@
+/**
+ * 系统入口页面——包含登录、主页面
+ * */
+
 import React from 'react';
-import Header from 'components/Header'
-import NavLeft from 'components/NavLeft/MenuRouter'
 import './App.css';
 
-function App() {
+function App(props) {
   return (
     <div>
-      <Header></Header>
-      <NavLeft></NavLeft>
+        {props.children}
     </div>
   );
 }
