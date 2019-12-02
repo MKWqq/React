@@ -33,6 +33,7 @@ export default (state = initState, action) => {
 				menuValue: action.menuValue
 			};
 		default:
+			// 初始化state数据
 			return {
 				...initState
 			};
