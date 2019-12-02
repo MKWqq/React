@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { Provider } from 'react-redux';
-import Store from './redux/store'
+import createStore from './redux/store'
 import IRouter from './router';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-    <Provider store={Store()}>
+    <Provider store={createStore()}>
         <IRouter />
     </Provider>,
     document.getElementById('root'));

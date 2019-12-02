@@ -2,7 +2,7 @@ import React from 'react';
 import {Menu, Icon, Button} from 'antd';
 import {Link} from 'react-router-dom';
 import menuConfig from 'assets/js/menuConfig';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import {SwitchMenu} from './../../redux/action';
 
 const {SubMenu} = Menu;
@@ -10,17 +10,16 @@ const {SubMenu} = Menu;
 class NavLeft extends React.Component {
 
 	state = {
-        currentMenuKey:window.location.pathname.replace(/\?.*$/,''),
 		collapse: false,
 		menuItemDOM: null
 	};
 
-    componentDidMount(){
-        let menuItemDOM = this.renderMenu(menuConfig);
-        this.setState({
-            menuItemDOM
-        })
-    }
+	componentDidMount() {
+		let menuItemDOM = this.renderMenu(menuConfig);
+		this.setState({
+			menuItemDOM
+		});
+	}
 
 	collapseClick = () => {
 		this.setState({
@@ -41,7 +40,7 @@ class NavLeft extends React.Component {
 				)
 			} else {
 				return (
-					<Menu.Item key={item.key}>
+					<Menu.Item key={item.key} title={item.title}>
 						<Link to={item.path}>
 							{(item.iconType) && (<Icon type={item.iconType}/>)}
 							<span>{item.title}</span>
@@ -51,13 +50,10 @@ class NavLeft extends React.Component {
 			}
 		})
 	};
-    menuItemClick=(item)=>{
-    	const {dispatch}=this.props;
-    	dispatch(SwitchMenu(item.key));
-    	this.setState({
-			currentMenuKey:item.key
-		});
-    };
+	menuItemClick = ({item, key, keyPath}) => {
+		const {dispatch} = this.props;
+		dispatch(SwitchMenu({title: item.props.title, selectKey: key,selectKeyPath:keyPath}));
+	};
 
 	render() {
 		return (
@@ -65,7 +61,8 @@ class NavLeft extends React.Component {
 				<Button onClick={this.collapseClick} type="primary">
 					<Icon type="mail"/>
 				</Button>
-				<Menu onClick={this.menuItemClick} defaultOpenKeys={["2"]} selectedKeys={[this.state.currentMenuKey]} mode="inline" theme="light"
+				<Menu onClick={this.menuItemClick} defaultOpenKeys={this.props.menuValue.selectKeyPath}
+				      selectedKeys={[this.props.menuValue.selectKey]} mode="inline" theme="light"
 				      inlineCollapsed={this.state.collapse}>
 					{this.state.menuItemDOM}
 				</Menu>
@@ -75,4 +72,10 @@ class NavLeft extends React.Component {
 	}
 }
 
-export default connect()(NavLeft);
+const mapStateToProps = (state) => {
+	return {
+		menuValue: state.menuValue
+	}
+};
+
+export default connect(mapStateToProps)(NavLeft);

@@ -12,8 +12,8 @@ export default [
 	},
 	{
 		title:"系统设置",
-		path:``,
-		key:"2",
+		path:`${_baseUrl}/setting`,
+		key:`${_baseUrl}/setting`,
 		iconType:"appstore",
 		children:[
 			{
@@ -23,8 +23,8 @@ export default [
 			},
 			{
 				title:"基础路由",
-				path:`${_baseUrl}/setting`,
-				key:`${_baseUrl}/setting`
+				path:`${_baseUrl}/BaseSetting`,
+				key:`${_baseUrl}/BaseSetting`
 			}
 		]
 	}

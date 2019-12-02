@@ -8,7 +8,7 @@ class Header extends React.Component{
 		return (
 			<div>
 				<Link to="/login">退出登录</Link>
-				<p>{this.props.menuValue}</p>
+				<p>{this.props.menuValue.title}</p>
 			</div>
 		);
 	}

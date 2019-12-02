@@ -14,9 +14,9 @@ export default function MainRoute(){
         <Switch>
             <Route path="/main/MainPage" component={MainPage} />
             <Route path="/main/StoreManage" component={StoreManage} />
-            <Route path="/main/setting">
+            <Route path="/main/BaseSetting">
                 <BaseSetting>
-                    <Route path="/main/setting/:id" component={ChildStore} />
+                    <Route path="/main/BaseSetting/:id" component={ChildStore} />
                 </BaseSetting>
             </Route>
             <Route>
