@@ -1,0 +1,14 @@
+{
+  "name": "start",
+  "version": "1.0.0",
+  "description": "入口文件",
+  "main": "index.js",
+  "scripts": {
+    "client": "node client/scripts/start.js",
+    "build": "node client/scripts/build.js",
+    "test": "node client/scripts/test.js",
+    "server": "node server/index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
