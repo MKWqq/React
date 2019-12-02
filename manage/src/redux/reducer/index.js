@@ -35,7 +35,7 @@ export default (state = initState, action) => {
 		default:
 			// 初始化state数据
 			return {
-				...initState
+				...state
 			};
 	}
 }
