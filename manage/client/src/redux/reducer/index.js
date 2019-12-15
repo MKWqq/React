@@ -14,6 +14,10 @@ const firstState = {
 };
 const initState = sessionStorage.initState ? JSON.parse(sessionStorage.initState) : firstState;
 
+/**
+ * @params:
+ * newState：为state变化部分组成的对象
+ * */
 function saveStateToSessionStorage(newState) {
 	if (!window.sessionStorage) {
 		console.log('不支持sessionStorage');
@@ -28,10 +32,9 @@ export default (state = initState, action) => {
 	switch (action.type) {
 		case type.SwitchMenu:
 			saveStateToSessionStorage({menuValue: action.menuValue});
-			return {
-				...state,
-				menuValue: action.menuValue
-			};
+			return Object.assign({...state},{menuValue: action.menuValue});
+		case type.SaveLoginMessage:
+			saveStateToSessionStorage({loginMessage:action.loginMessage});
 		default:
 			// 初始化state数据
 			return {

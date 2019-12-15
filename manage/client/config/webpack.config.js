@@ -308,6 +308,7 @@ module.exports = function (webpackEnv) {
 				'react-native': 'react-native-web',
 				'components':path.resolve(__dirname,'../src/components'),
 				'assets':path.resolve(__dirname,'../src/assets'),
+				'reduxDir':path.resolve(__dirname,'../src/redux'),
 				'pages':path.resolve(__dirname,'../src/pages'),
 				// Allows for better profiling with ReactDevTools
 				...(isEnvProductionProfile && {
@@ -484,7 +485,6 @@ module.exports = function (webpackEnv) {
 								loader:'sass-resources-loader',
 								options:{
 									resources:[
-										// path.resolve(__dirname,'../src/assets/less/index.less'),
 										path.resolve(__dirname,'../src/assets/less/variable.less'),
 										path.resolve(__dirname,'../src/assets/less/mixin.less')
 									]

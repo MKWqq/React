@@ -4,12 +4,21 @@
 import React, {Component} from 'react'
 import {Form, Icon, Input, Button, Checkbox} from 'antd'
 import './login.less'
+import {connect} from 'react-redux';
+import {saveLoginMessage} from 'reduxDir/action'
+import {useHistory} from 'react-router-dom'
 
 class LoginForm extends Component {
 	submitForm = (e) => {
+        let {dispatch}=this.props;
 		e.preventDefault();
-		this.props.form.validateFields((errs, values) => {
-			console.log('errs：', errs, 'values：', values);
+		this.props.form.validateFields((err, values) => {
+			console.log('errs：', err, 'values：', values);
+			if(!err){
+			//	校验通过
+				dispatch(saveLoginMessage(values));
+                useHistory().push('/main/MainPage');
+			}
 		});
 	};
 
@@ -26,7 +35,7 @@ class LoginForm extends Component {
 			}
 		};
 		return (
-			<Form {...formItemLayout} onSubmit={this.submitForm} className='login-form'>
+			<Form {...formItemLayout} onSubmit={this.submitForm} className='login-form transform-v-h-center'>
 				<Form.Item label='用户名'>
 					{getFieldDecorator('userName', {
 						rules: [{required: true, message: '请输入用户名'}],
@@ -45,12 +54,24 @@ class LoginForm extends Component {
 						       placeholder={'请输入密码'}/>
 					)}
 				</Form.Item>
+				<Form.Item>
+					{getFieldDecorator('isRemember',{
+						valuePropName:'checked',
+						initialValue:true
+					})(
+						<Checkbox>记住密码</Checkbox>
+					)}
+				</Form.Item>
 				<Form.Item style={{textAlign:'center'}}>
-					<Button type='primary' htmlType='submit'>登录</Button>
+                    <Button type='primary' htmlType='submit'>登录</Button>
 				</Form.Item>
 			</Form>
 		)
 	}
 }
 
-export default Form.create({name: 'login-form'})(LoginForm);
+const mapStateToProps=(state)=>{
+	return {loginMessage:state.loginMessage};
+};
+
+export default connect(mapStateToProps)(Form.create({name: 'login-form'})(LoginForm));

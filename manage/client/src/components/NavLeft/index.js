@@ -3,7 +3,7 @@ import {Menu, Icon, Button} from 'antd';
 import {Link} from 'react-router-dom';
 import menuConfig from 'assets/js/menuConfig';
 import {connect} from 'react-redux';
-import {SwitchMenu} from './../../redux/action';
+import {SwitchMenu} from 'reduxDir/action';
 
 const {SubMenu} = Menu;
 
