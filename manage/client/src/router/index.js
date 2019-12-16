@@ -2,7 +2,7 @@
  * 路由
  * */
 import React,{Component} from 'react'
-import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
+import {Router,Route,Switch} from 'react-router-dom'
 
 // 组件
 import App from '../pages/App'
@@ -10,12 +10,13 @@ import Login from '../pages/login/Login'
 import Main from '../pages/main'
 import NoMatch from 'pages/404'
 import MainRoute from './MainRoute'
+import history from './history'
 
 export default class IRouter extends Component{
 
 	render(){
 		return (
-			<Router>
+			<Router history={history}>
 				<App>
 					<Switch>
 						<Route path="/login">

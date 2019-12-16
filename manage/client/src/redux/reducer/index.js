@@ -35,6 +35,7 @@ export default (state = initState, action) => {
 			return Object.assign({...state},{menuValue: action.menuValue});
 		case type.SaveLoginMessage:
 			saveStateToSessionStorage({loginMessage:action.loginMessage});
+			return Object.assign({...state},{loginMessage:action.loginMessage});
 		default:
 			// 初始化state数据
 			return {

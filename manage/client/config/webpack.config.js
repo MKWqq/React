@@ -310,6 +310,7 @@ module.exports = function (webpackEnv) {
 				'assets':path.resolve(__dirname,'../src/assets'),
 				'reduxDir':path.resolve(__dirname,'../src/redux'),
 				'pages':path.resolve(__dirname,'../src/pages'),
+				'router':path.resolve(__dirname,'../src/router'),
 				// Allows for better profiling with ReactDevTools
 				...(isEnvProductionProfile && {
 					'react-dom$': 'react-dom/profiling',
