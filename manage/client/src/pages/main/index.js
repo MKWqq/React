@@ -9,7 +9,7 @@ export default class Main extends Component{
         return (
             <div>
                 <Header />
-                <div className="flex-justify-between">
+                <div className="display-flex">
                     <NavLeft />
                     {this.props.children}
                 </div>
