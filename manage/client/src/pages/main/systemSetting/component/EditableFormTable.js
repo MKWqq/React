@@ -134,7 +134,7 @@ class EditableTable extends Component {
 				...col,
 				onCell: record => ({
 					record,
-					inputType: col.dataIndex === 'telephone' ? 'number' : 'text',
+					inputType: col.dataIndex === 'age' ? 'number' : 'text',
 					dataIndex: col.dataIndex,
 					title: col.title,
 					editing: this.isEditing(record)
