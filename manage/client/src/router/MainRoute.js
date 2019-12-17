@@ -3,7 +3,7 @@
  * */
 import React from 'react'
 import {Switch,Route} from 'react-router-dom'
-import MainPage from 'pages/main/MainPage'
+import MainPage from 'pages/main/MainPage/MainPage'
 import BaseSetting from 'pages/main/systemSetting/BaseSetting'
 import StoreManage from 'pages/main/systemSetting/StoreManage'
 import ChildStore from 'pages/main/systemSetting/ChildStore'

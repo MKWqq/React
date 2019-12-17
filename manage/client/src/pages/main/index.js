@@ -3,6 +3,7 @@
 import React,{Component} from 'react'
 import Header from 'components/Header'
 import NavLeft from 'components/NavLeft'
+import './index.css'
 
 export default class Main extends Component{
     render(){
@@ -11,7 +12,9 @@ export default class Main extends Component{
                 <Header />
                 <div className="display-flex">
                     <NavLeft />
-                    {this.props.children}
+                    <div className="g-main-container">
+                        {this.props.children}
+                    </div>
                 </div>
             </div>
         )

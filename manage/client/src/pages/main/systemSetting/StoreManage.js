@@ -3,6 +3,7 @@
  * */
 import React from 'react'
 import {Table,Tag,Input,InputNumber,Popconfirm,Form} from 'antd'
+import EditableFormTable from './component/EditableFormTable'
 
 export default class StoreManage extends React.Component{
 	columns=[
@@ -36,17 +37,22 @@ export default class StoreManage extends React.Component{
 			key:'4',
 			title:'操作',
 			dataIndex:'operator',
-			render:(value)=>{}
+			render:()=>{
+				return <a>编辑</a>
+			}
 		}
 	];
 	// status:0——停止，1——有效
-	data=[
-		{key:'1',storeName:'春熙路',address:'春熙路110号',telephone:'15156278767',status:'0'},
-		{key:'2',storeName:'春熙路2',address:'春熙路1190号',telephone:'15156278707',status:'1'}
-	];
+	data=this.columns.map((item,index)=>{
+		return {key:index.toString(),storeName:'春熙路',address:'春熙路110号',telephone:'15156278767',status:index.toString()}
+	});
 	render(){
 		return (
-			<Table columns={this.columns} dataSource={this.data} />
+			<div>
+				<Table columns={this.columns} dataSource={this.data} />
+				<EditableFormTable />
+			</div>
+
 		)
 	}
 };
