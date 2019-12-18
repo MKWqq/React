@@ -27,7 +27,6 @@ export default class StoreManage extends React.Component{
 			title:'状态',
 			dataIndex:'status',
 			render:(value)=>{
-                console.log(value);
                 return (
 					<Tag color={value==='0'?'volcano':'green'} key='value'>{value==='0'?'停用':'有效'}</Tag>
 				);
