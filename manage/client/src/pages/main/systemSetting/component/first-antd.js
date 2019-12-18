@@ -83,7 +83,7 @@ class EditableTable extends Component {
                                     </a>
                                 )}
 							</EditableContext.Consumer>
-							<Popconfirm title='确认取消？' onClick={() => this.edit(record.key)}>
+							<Popconfirm title='确认取消？' cancelText='取消' okText='确认' onConfirm={() => this.cancel(record.key)}>
 								<a>取消</a>
 							</Popconfirm>
 						</span>

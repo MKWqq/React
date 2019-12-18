@@ -21,7 +21,7 @@ const dotenvFiles = [
   // Don't include `.env.local` for `test` environment
   // since normally you expect tests to produce the same
   // results for everyone
-  NODE_ENV !== 'test' && `${paths.dotenv}.local`,
+  NODE_ENV !== 'first-antd.js' && `${paths.dotenv}.local`,
   paths.dotenv,
 ].filter(Boolean);
 
