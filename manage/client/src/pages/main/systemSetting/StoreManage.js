@@ -2,7 +2,7 @@
  * 店面管理
  * */
 import React from 'react'
-import {Table,Tag,Input,InputNumber,Popconfirm,Form} from 'antd'
+import {Table,Tag} from 'antd'
 import EditableFormTable from './component/EditableFormTable'
 
 export default class StoreManage extends React.Component{
