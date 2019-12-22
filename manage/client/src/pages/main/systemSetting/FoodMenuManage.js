@@ -33,7 +33,7 @@ const mockRespData = [
 ];
 
 let dataSource = mockRespData.map((record, index) => {
-	return {...record, key: index.toString()};
+	return {key: index,...record};
 });
 
 
@@ -50,7 +50,7 @@ class FoodMenuManage extends Component {
 	}
 
 	render() {
-		return (
+        return (
 			<EditableFormTableBase operatorConfigArr={['isDelete']} dataSource={this.state.dataSource} baseColumns={this.state.baseColumns}/>
 		);
 	}

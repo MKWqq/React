@@ -24,6 +24,18 @@ const operatorConfigRelation = {
 const EditableContext = React.createContext({});
 
 class EditableCell extends Component {
+	constructor(props){
+		super(props);
+		this.state={
+			useStatusValue:''
+		}
+	}
+
+	switchChange(newValue){
+		this.setState({
+            useStatusValue:newValue
+		});
+    }
 
 	renderEditCell() {
 		let {cellType, selectData} = this.props;
@@ -41,7 +53,7 @@ class EditableCell extends Component {
 			);
 		} else if (cellType === 'switch') {
 			return (
-				<SwitchComponent checkedChildren='启用' unCheckedChildren='停用'/>
+				<SwitchComponent onChange={(newValue)=>this.switchChange(newValue)} checkedChildren='启用' unCheckedChildren='停用'/>
 			);
 		} else {
 			return (
@@ -99,8 +111,8 @@ class EditableFormTableBase extends Component {
 					return (
 						<span>
 							<a>编辑</a>
-							{operatorConfigArr.map(item => (
-								<a className='margin-left-10'>{operatorConfigRelation[item]['name']}</a>
+							{operatorConfigArr.map((item,index) => (
+								<a key={index} className='margin-left-10'>{operatorConfigRelation[item]['name']}</a>
 							))}
 						</span>
 					);
@@ -149,7 +161,7 @@ class EditableFormTableBase extends Component {
 
 	render() {
 		// 确保传递给自定义单元格子组件接受的props是最新的
-		let renderColumns = this.handlerCellComponentProps();
+        let renderColumns = this.handlerCellComponentProps();
 		let components = {
 			body: {
 				cell: EditableCell
