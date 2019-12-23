@@ -37,7 +37,7 @@ export default class StoreManage extends React.Component{
 			title:'操作',
 			dataIndex:'operator',
 			render:()=>{
-				return <a>编辑</a>
+				return <span className='text-button'>编辑</span>
 			}
 		}
 	];

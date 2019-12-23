@@ -1,3 +1,5 @@
+/* 可编辑表格使用样例 */
+
 /**
  * 菜单管理
  * @EditableFormTableBase之props：
@@ -25,8 +27,8 @@
  *  deleteCB(record)事件：删除操作事件绑定
  * */
 import React, {Component} from 'react'
-import EditableFormTableBase from '../../../components/EditTable/EditableFormTableBase'
-import selectAllData from '../../../componentHttp/selectHttp'
+import EditableFormTableBase from './EditableFormTableBase'
+import selectAllData from '../../componentHttp/selectHttp'
 import {Form,Tag} from 'antd'
 
 /* 模拟数据 */

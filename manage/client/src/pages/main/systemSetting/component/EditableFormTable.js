@@ -95,16 +95,16 @@ class EditableTable extends Component {
 							<span>
 								<EditableContext.Consumer>
 									{(form) => (
-										<a className='margin-right-10' onClick={() => this.save(form, currentRow.key)}>保存</a>)
+										<span className='text-button margin-right-10' onClick={() => this.save(form, currentRow.key)}>保存</span>)
 									}
 								</EditableContext.Consumer>
 								<Popconfirm title='确认取消？' cancelText='取消' okText='确认' onConfirm={()=>{this.cancel(currentRow.key)}}>
-									<a>取消</a>
+									<span className='text-button'>取消</span>
 								</Popconfirm>
 							</span>
-						) : (<a onClick={() => {
+						) : (<span className='text-button' onClick={() => {
 							this.edit(currentRow.key)
-						}}>编辑</a>)
+						}}>编辑</span>)
 					);
 				}
 			}
