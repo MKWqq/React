@@ -17,7 +17,7 @@
 
 import React, {Component} from 'react';
 import {Form, Input, Select, Table, Popconfirm} from 'antd/lib/index';
-import SwitchComponent from 'components/Editable/Switch';
+import SwitchComponent from 'components/FormElement/Switch';
 import {operatorConfigRelation} from './EditTableConfig'
 const {TextArea} = Input;
 const {Option} = Select;

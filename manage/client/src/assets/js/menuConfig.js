@@ -24,6 +24,19 @@ export default [
 		]
 	},
 	{
+		title:'表单元素API',
+		path:`${_baseUrl}/FormElementAPI`,
+		key:`${_baseUrl}/FormElementAPI`,
+		iconType:'appstore',
+		children:[
+			{
+				title:'时间选择器',
+				path:`${_baseUrl}/FormElementAPI/DatePicker`,
+				key:`${_baseUrl}/FormElementAPI/DatePicker`
+			}
+		]
+	},
+	{
 		title:"系统设置",
 		path:`${_baseUrl}/setting`,
 		key:`${_baseUrl}/setting`,
@@ -38,11 +51,6 @@ export default [
 				title:'菜单管理',
 				path:`${_baseUrl}/FoodMenuManage`,
 				key:`${_baseUrl}/FoodMenuManage`,
-			},
-			{
-				title:"基础路由",
-				path:`${_baseUrl}/BaseSetting`,
-				key:`${_baseUrl}/BaseSetting`
 			}
 		]
 	}
