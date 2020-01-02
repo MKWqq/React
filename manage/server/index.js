@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const app = express();
 const path=require('path');
+const router=require('./router');
+const database=require('./database');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
@@ -18,6 +20,8 @@ app.all('*', function (req, res, next) {
     next();
 });
 
+app.use(router);
+
 app.set('port', process.env.PORT || 8080);
 app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'))
@@ -25,7 +29,7 @@ app.listen(app.get('port'), function () {
 
 // 处理系统级异常
 process.on('uncaughtException', function (err) {
-    Logger.error('[tm:' + utils.getNowFormatDate() + ']', err);
+    console.log(`[tm:]`, err);
 
     // 系统退出
     // process.exit(1);
