@@ -1,4 +1,4 @@
-webpack已全局引入variable.less与mixin.less文件，可直接引入内容。必须使用webpack全局引入这两个文件，在页面中才能直接使用，因为该部分是less内容，webpack会编译less文件为css文件，在编译页面内容时就找不到less文件，全局引入后，在编译每一个页面文件就会引入该两个less文件
+webpack已全局引入variable.less与mixin.less文件，可直接引入内容。必须使用webpack全局引入这两个文件，在页面中才能直接使用。因为该部分是less内容，webpack会编译less文件为css文件，在编译页面内容时就找不到对应的less内容，全局引入后，在编译每一个页面文件就会引入该两个less文件
 variable文件，定义css变量，暴露css变量
 mixin为组合式方法，传入变量即可，暴露css方法
 layout为布局类样式。暴露类，引入index.less后，在页面中可直接引用类
