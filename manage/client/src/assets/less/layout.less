@@ -33,7 +33,7 @@ body{
 .vertical-baseline{vertical-align:baseline;}
 .vertical-bottom{vertical-align:bottom;}
 
-/* todo 垂直居中 */
+/* todo 垂直居中、水平居中、垂直水平居中transform */
 .transform-v-center{position:absolute;top:50%;transform:translateY(-50%);}
 .transform-h-center{position:absolute;left:50%;transform:translateX(-50%);}
 .transform-v-h-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
@@ -46,14 +46,18 @@ body{
 .flex-justify-between{.display-flex();.flex-direction();.justify-content(space-between);}
 // 水平居中对齐
 .flex-h-center{.display-flex();.justify-content();}
-// 水平垂直居中
-.flex-v-h-center{.display-flex();.justify-content();.align-items();}
-// 垂直居中
+// 垂直居中——单轴线
 .flex-v-center{.display-flex();.align-items();}
+// 垂直居中——多轴线
+.flex-v-multi-center{.display-flex();.align-content(center);}
+// 水平垂直居中——单轴线
+.flex-v-h-center{.display-flex();.justify-content();.align-items();}
+//水平垂直居中——多轴线
+.flex-v-multi-h-center{.display-flex();.justify-content();.align-content(center);}
 // flex:0 0 auto;
-.flex-item-none{flex:none;}
+.flex-none{flex:none;}
 // flex:1 1 auto;
-.flex-item-auto{flex:auto;}
+.flex-auto{flex:auto;}
 
 /* todo margin与padding */
 .margin-top-10{margin-top:.1rem;}

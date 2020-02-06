@@ -1,6 +1,7 @@
 /* 基础样式
 date:2019-11-20 */
-@import './variable.less';
+//@import './variable.less';
+//@import './mixin.less';
 .border-shadow{
 	box-shadow:0 0 .05rem .03rem rgba(50,192,222,.3);
 }
@@ -27,5 +28,17 @@ date:2019-11-20 */
 .t-30{font-size:@t-30;}
 
 /* todo button */
-.text-button{color:@primary-color;}
-.text-button:hover{cursor:pointer;}
+.text-button{color:@primary-color;
+	&:hover{cursor:pointer;}
+}
+.small-button{.button-small-basis(@t-white,@primary-color);
+	&:disabled{.button-small-basis--not-border(#fff,red);}
+}
+.middle-button{.button-middle-basis(@t-white,@primary-color);
+	&:disabled{.button-middle-basis--not-border(#fff,red);}
+}
+.large-button{.button-large-basis(@t-white,@primary-color);
+	&:disabled{.button-large-basis--not-border(@t-white,red);}
+}
+/* todo tag */
+.primary-tag{.tag-instance-basis(@t-white,@primary-color);}

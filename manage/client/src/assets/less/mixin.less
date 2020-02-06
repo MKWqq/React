@@ -2,8 +2,9 @@
  date:2019-11-21
  */
 
+//@import './variable.less';——webpack插件全局引入variable.less与mixin.less
 /* TODO basic */
-.border(@color:#ddd){border:1px solid @color;}
+.border(@color:@border-color){border:1px solid @color;}
 .marginTop(@value:0){margin-top:@value;}
 .marginBottom(@value:0){margin-bottom:@value;}
 .marginLeft(@value:0){margin-left:@value;}
@@ -32,4 +33,21 @@
 .align-self(@value:auto){align-self:@value;}
 /*flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]——快捷键：auto (1 1 auto) 和 none (0 0 auto)*/
 .flex(@grow:0,@shrink:0,@basis:auto){flex:@grow @shrink @basis;}
+/* TODO button类——<button> */
+.button-basis(@width:100%,@height:.32rem,@borderRadius:.04rem,@fontSize:.12rem,@color:@border-color,@backgroundColor:@primary-color)
+{display:inline-block;text-align:center;line-height:@height;width:@width;height:@height;font-size:@fontSize;color:@color;border-radius:@borderRadius;background:@backgroundColor;box-sizing:border-box;
+  // focus
+  &:focus{outline:none;}
+}
+.button-small-basis(@color:@border-color,@backgroundColor:@primary-color){.button-basis(1rem,.34rem,.04rem,.12rem,@color,@backgroundColor);.border(yellow);}
+.button-small-basis--not-border(@color:@border-color,@backgroundColor:@primary-color){.button-basis(1rem,.34rem,.04rem,.12rem,@color,@backgroundColor);border:none;}
+.button-middle-basis(@color:@border-color,@backgroundColor:@primary-color){.button-basis(2rem,.34rem,.04rem,.12rem,@color,@backgroundColor);.border(yellow);}
+.button-middle-basis--not-border(@color:@border-color,@backgroundColor:@primary-color){.button-basis(2rem,.34rem,.04rem,.12rem,@color,@backgroundColor);border:none;}
+.button-large-basis(@color:@border-color,@backgroundColor:@primary-color){.button-basis(100%,.34rem,.04rem,.12rem,@color,@backgroundColor);.border(yellow);}
+.button-large-basis--not-border(@color:@border-color,@backgroundColor:@primary-color){.button-basis(100%,.34rem,.04rem,.12rem,@color,@backgroundColor);border:none;}
+/* TODO tag类 */
+.tag-basis(@width:100%,@height:.32rem,@borderRadius:.04rem,@fontSize:.12rem,@color:@border-color,@backgroundColor:@primary-color)
+{display:inline-block;text-align:center;line-height:@height;width:@width;height:@height;font-size:@fontSize;color:@color;border-radius:@borderRadius;background:@backgroundColor;box-sizing:border-box;}
+.tag-instance-basis(@color:@border-color,@backgroundColor:@primary-color){.tag-basis(.8rem,.34rem,.4rem,.12rem,@color,@backgroundColor);border:none;}
+
 

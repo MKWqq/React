@@ -48,6 +48,7 @@ export default class StoreManage extends React.Component{
 	render(){
 		return (
 			<div>
+				<div className='primary-tag'>123</div>
 				<Table columns={this.columns} dataSource={this.data} />
 				<EditableFormTable />
 			</div>
