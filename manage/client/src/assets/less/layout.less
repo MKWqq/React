@@ -7,6 +7,7 @@ date:2019-11-21 */
 body{
 	font-size:.12rem;
 }
+.overflow-hidden{overflow:hidden;}
 
 /* todo display */
 .d-block{display:block;}
@@ -15,10 +16,13 @@ body{
 .d-table{display:table;}
 .d-table-cell{display:table-cell;}
 
-/* float */
+/* todo float */
 .float-left{float:left;}
 .float-right{float:right;}
+
+/* 清除浮动 */
 .clear-float:after{content:'';display:block;height:0;visibility:hidden;clear:both;}
+.clear-float-table::after{content:'';display:table;}
 
 /* todo text-align */
 .text-center{text-align:center;}
@@ -86,6 +90,11 @@ body{
 .margin-top-25{margin-top:.25rem;}
 .margin-top-30{margin-top:.30rem;}
 
+.padding-top-10{padding-top:.10rem;}
+.padding-top-15{padding-top:.15rem;}
+.padding-top-20{padding-top:.20rem;}
+.padding-top-25{padding-top:.25rem;}
+.padding-top-30{padding-top:.30rem;}
 .padding-bottom-10{padding-bottom:.10rem;}
 .padding-bottom-15{padding-bottom:.15rem;}
 .padding-bottom-20{padding-bottom:.20rem;}

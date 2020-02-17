@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.less';
 import './assets/less/index.less';
+import './assets/less/antd/button.less';
 import { Provider } from 'react-redux';
 import createStore from './redux/store'
 import IRouter from './router';

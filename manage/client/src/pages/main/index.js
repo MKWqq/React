@@ -3,7 +3,7 @@
 import React,{Component} from 'react'
 import Header from 'components/Header'
 import NavLeft from 'components/NavLeft'
-import './index.css'
+import '../less/index.less'
 
 export default class Main extends Component{
     render(){
