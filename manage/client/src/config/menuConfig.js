@@ -51,6 +51,65 @@ export default [
 		]
 	},
 	{
+		title:'表单',
+		path:`${_baseUrl}/form`,
+		key:`${_baseUrl}/form`,
+		children:[
+			{
+				title:'登录',
+				path:`${_baseUrl}/form/login`,
+				key:`${_baseUrl}/form/login`,
+			},{
+				title:'注册',
+				path:`${_baseUrl}/form/register`,
+				key:`${_baseUrl}/form/register`,
+			}
+		]
+	},
+	{
+		title:'表格',
+		path:`${_baseUrl}/table`,
+		key:`${_baseUrl}/table`,
+		children:[
+			{
+				title:'基础表格',
+				path:`${_baseUrl}/form/basicTable`,
+				key:`${_baseUrl}/form/basicTable`,
+			},{
+				title:'高级表格',
+				path:`${_baseUrl}/form/highTable`,
+				key:`${_baseUrl}/form/highTable`,
+			}
+		]
+	},
+    {
+        title: '富文本',
+		path:`${_baseUrl}/rich`,
+		key:`${_baseUrl}/rich`,
+    },
+	{
+        title: '图标',
+        path: `${_baseUrl}/charts`,
+        key: `${_baseUrl}/charts`,
+        children: [
+            {
+                title: '柱形图',
+                path: `${_baseUrl}/charts/bar`,
+                key: `${_baseUrl}/charts/bar`,
+            },
+            {
+                title: '饼图',
+                path: `${_baseUrl}/charts/pie`,
+                key: `${_baseUrl}/charts/pie`,
+            },
+            {
+                title: '折线图',
+                path: `${_baseUrl}/charts/line`,
+                key: `${_baseUrl}/charts/line`,
+            },
+        ]
+    },
+	{
 		title:'门店',
 		path:`${_baseUrl}/Store`,
 		key:`${_baseUrl}/Store`,

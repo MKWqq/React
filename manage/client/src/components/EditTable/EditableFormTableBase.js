@@ -35,7 +35,8 @@ class EditableCell extends Component {
 
 	// todo Switch change事件数据返回
 	switchChange(newValue) {
-		this.setState({
+        console.log('switch更新啦：',newValue);
+        this.setState({
 			useStatusValue: newValue
 		});
 	}
@@ -57,7 +58,7 @@ class EditableCell extends Component {
 			);
 		} else if (cellType === 'switch') {
 			return (
-				<SwitchComponent onChange={(newValue) => this.switchChange(newValue)} checkedChildren='启用'
+				<SwitchComponent trueLabel='1' falseLabel='0' onChange={(newValue) => this.switchChange(newValue)} checkedChildren='启用'
 				                 unCheckedChildren='停用'/>
 			);
 		} else {

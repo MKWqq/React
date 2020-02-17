@@ -1,7 +1,7 @@
 import React from 'react';
 import {Menu, Icon, Button} from 'antd';
 import {Link} from 'react-router-dom';
-import menuConfig from 'assets/js/menuConfig';
+import menuConfig from '../../config/menuConfig';
 import {connect} from 'react-redux';
 import {SwitchMenu} from 'reduxDir/action';
 
