@@ -7,22 +7,26 @@ date:2019-11-21 */
 body{
 	font-size:.12rem;
 }
-.overflow-hidden{overflow:hidden;}
 
+/* BFC:display、position、float、overflow */
 /* todo display */
-.d-block{display:block;}
-.d-inline{display:inline;}
-.d-inline-block{display:inline-block;}
-.d-table{display:table;}
-.d-table-cell{display:table-cell;}
+.display-block{display:block;}
+.display-inline{display:inline;}
+.display-inline-block{display:inline-block;}
+.display-table{display:table;}
+.display-table-cell{display:table-cell;}
+
+/* todo overflow */
+.overflow-hidden{overflow:hidden;}
 
 /* todo float */
 .float-left{float:left;}
 .float-right{float:right;}
 
-/* 清除浮动 */
-.clear-float:after{content:'';display:block;height:0;visibility:hidden;clear:both;}
-.clear-float-table::after{content:'';display:table;}
+/* todo 清除浮动 */
+.clear-float:after{content:'';display:block;clear:both;}
+.clear-float-table::after{content:'';display:table;clear:both;}
+.clear-float-hidden{overflow:hidden;*zoom:1;}
 
 /* todo text-align */
 .text-center{text-align:center;}
