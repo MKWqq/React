@@ -5,7 +5,7 @@ import React from 'react'
 import {Switch,Route} from 'react-router-dom'
 import MainPage from 'pages/main/MainPage/MainPage'
 import UIButton from 'pages/main/UI/Button'
-import UIAlter from 'pages/main/UI/Alter'
+import UIModal from 'pages/main/UI/Modal'
 import UILoading from 'pages/main/UI/Loading'
 import UINotify from 'pages/main/UI/Notify'
 import UIMessage from 'pages/main/UI/Message'
@@ -40,7 +40,7 @@ export default function MainRoute(){
             <Route path="/main/StoreManage" component={StoreManage} />
             <Route path="/main/UI">
                 <Route path="/main/UI/Button" component={UIButton} />
-                <Route path="/main/UI/Alter" component={UIAlter} />
+                <Route path="/main/UI/Modal" component={UIModal} />
                 <Route path="/main/UI/Loading" component={UILoading} />
                 <Route path="/main/UI/Notify" component={UINotify} />
                 <Route path="/main/UI/Message" component={UIMessage} />

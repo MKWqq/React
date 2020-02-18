@@ -12,6 +12,25 @@ export default class UIButton extends Component{
 		}
 	}
 
+	static getDerivedStateFromProps(nextProps,prevState){
+		console.log('getDerivedStateFromProps',nextProps,prevState);
+		return null;
+	}
+
+	shouldComponentUpdate(nextProps,nextState){
+		console.log('shouldComponentUpdate', nextProps, nextState);
+		return true;
+	}
+
+	getSnapshotBeforeUpdate(prevProps,prevState){
+		console.log('getSnapshotBeforeUpdate', prevProps, prevState);
+		return null;
+	}
+
+	componentDidUpdate(prevProps,prevState,snapshot){
+		console.log('componentDidUpdate', prevProps, prevState, snapshot);
+	}
+
 	changeSize(e){
 		this.setState({
 			size:e.target.value

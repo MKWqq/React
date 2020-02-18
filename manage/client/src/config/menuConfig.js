@@ -21,8 +21,8 @@ export default [
                 key:`${_baseUrl}/UI/Button`
             },{
                 title:'弹窗',
-                path:`${_baseUrl}/UI/Alter`,
-                key:`${_baseUrl}/UI/Alter`
+                path:`${_baseUrl}/UI/Modal`,
+                key:`${_baseUrl}/UI/Modal`
             },{
                 title:'Loading',
                 path:`${_baseUrl}/UI/Loading`,
