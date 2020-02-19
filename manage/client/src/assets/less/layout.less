@@ -45,6 +45,18 @@ body{
 .transform-v-center{position:absolute;top:50%;transform:translateY(-50%);}
 .transform-h-center{position:absolute;left:50%;transform:translateX(-50%);}
 .transform-v-h-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+// todo 已知元素宽高的垂直居中
+.had-width-height-center{
+	width: 200px;
+	height: 200px;
+	background-color: #6699FF;
+	margin:auto;
+	position: absolute;        //父元素需要相对定位
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
 
 /* todo flex布局——设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。 */
 .display-flex{display:flex;display:-webkit-flex;}
