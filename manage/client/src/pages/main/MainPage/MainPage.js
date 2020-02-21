@@ -3,6 +3,7 @@
  * */
 import React from 'react';
 import {Card} from 'antd';
+import './MainPage.less'
 import Http from 'assets/http'
 
 export default class MainPage extends React.Component{
@@ -69,6 +70,12 @@ export default class MainPage extends React.Component{
 				<Card title="受控组件之Form标签">
 					<input className='border-red' type="text" name='name' value={this.state.name} onChange={(e)=>this.inputChange(e)} />
 					<input className="border-red" type="text" name='password' value={this.state.password} onChange={(e)=>this.inputChange(e)} />
+				</Card>
+				<Card title='Checkbox美化'>
+					<div role="checkbox" className='g-checkbox'>
+						<input id='checkbox' className='g-input--checkbox' type="checkbox" />
+						<div className='g-frame--checkbox'> </div>
+					</div>
 				</Card>
 			</div>
 		);
