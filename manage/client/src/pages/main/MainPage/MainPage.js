@@ -4,6 +4,7 @@
 import React from 'react';
 import {Card} from 'antd';
 import './MainPage.less'
+import ActualDOM from '../../../assets/js/virtualDiff'
 import Http from 'assets/http'
 
 export default class MainPage extends React.Component{
@@ -42,6 +43,9 @@ export default class MainPage extends React.Component{
 		console.log('创建及更新时调用的生命周期render',this.state);
 		return (
 			<div>
+				<Card title="virtual DOM展示">
+					<ActualDOM />
+				</Card>
 				<Card title="生命周期展示">
 					<div>
 						<aside className='float-left' style={{width:'500px'}}>
