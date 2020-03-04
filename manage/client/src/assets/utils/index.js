@@ -3,13 +3,35 @@
  * date：2020-01-19
  * author：summerW
  * */
-import basicUtils from './libs/utils'
+import UtilsBase from './libs/utils'
 
-export default{
-	/* todo 判断数据类型 */
-	isArray:basicUtils.isType('Array'),
-	isObject:basicUtils.isType('Object'),
-	isFunction:basicUtils.isType('Function'),
-	isDate:basicUtils.isType('Date'),
-	isRegExp:basicUtils.isType('RegExp'),
+class Utils extends UtilsBase{
+	constructor(props){
+		super();
+	}
+    /* todo 判断数据类型 */
+	isArray(value){
+		return this.isType('Array')(value);
+	}
+	isObject(value){
+		return this.isType('Object')(value);
+	}
+	isFunction(value){
+		return this.isType('Function')(value);
+	}
+	isDate(value){
+		return this.isType('Date')(value);
+	}
+	isRegExp(value){
+		return this.isType('RegExp')(value);
+	}
 }
+
+export default new Utils();
+// export default{
+// 	isArray:basicUtils.isType('Array'),
+// 	isObject:basicUtils.isType('Object'),
+// 	isFunction:basicUtils.isType('Function'),
+// 	isDate:basicUtils.isType('Date'),
+// 	isRegExp:basicUtils.isType('RegExp'),
+// }

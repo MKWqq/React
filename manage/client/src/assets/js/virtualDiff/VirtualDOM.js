@@ -9,7 +9,8 @@ import utils from '../../utils'
 function VNode(tagName,options,children){
 	this.tag=tagName;
 	this.data=options;
-	if(utils.isArray(children)){
+    console.log(children,utils.isArray(children));
+    if(utils.isArray(children)){
 		this.children=children;
 		this.child=undefined;
 	}else{
