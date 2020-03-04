@@ -3,9 +3,9 @@
  * date：2020-01-19
  * author：summerW
  * */
-import UtilsBase from './libs/utils'
+import UtilBase from './libs/utils'
 
-class Utils extends UtilsBase{
+class Utils extends UtilBase{
 	constructor(props){
 		super();
 	}
@@ -28,10 +28,3 @@ class Utils extends UtilsBase{
 }
 
 export default new Utils();
-// export default{
-// 	isArray:basicUtils.isType('Array'),
-// 	isObject:basicUtils.isType('Object'),
-// 	isFunction:basicUtils.isType('Function'),
-// 	isDate:basicUtils.isType('Date'),
-// 	isRegExp:basicUtils.isType('RegExp'),
-// }
